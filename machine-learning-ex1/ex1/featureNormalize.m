@@ -24,9 +24,14 @@ sigma = zeros(1, size(X, 2));
 %               each feature. 
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%       
+%
 
-
+for i = 1:size(X,2)
+mu(:,i) = mean(X_norm(:,i));%Calculate mean for each feature
+sigma(:,i) = std(X_norm(:,i)); %Calculate standard deviation for each feature
+X_norm(:,i) = (X_norm(:,i)- mu(:,i))/ sigma(:,i) ;
+    
+end
 
 
 
